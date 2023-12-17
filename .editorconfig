@@ -12,3 +12,13 @@ insert_final_newline = true
 [*.{rs,js,ts,json,yaml,yml,xml,html,css,scss}]
 charset = utf-8
 
+# Indentation override for all JS/TS under src directory
+#[src/**.{js,jsx,ts,tsx}]
+#indent_style = space
+#indent_size = 2
+
+# Indentation override for all Rust files under src directory
+# Note that rust analyzer will suggest this indent size anyway
+#[src/**.{rs}]
+#indent_style = space
+#indent_size = 4
