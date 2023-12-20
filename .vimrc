@@ -11,7 +11,10 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
+set smartindent
 
+set scrolloff=8
+set signcolumn=yes
 set colorcolumn=120
 highlight ColorColumn ctermbg=0*
 
