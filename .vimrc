@@ -12,6 +12,7 @@ set shiftwidth=4
 set expandtab
 set smarttab
 set smartindent
+set nowrap
 
 set scrolloff=8
 set signcolumn=yes
