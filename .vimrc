@@ -1,6 +1,6 @@
 "Plugins"
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
+Plug 'rose-pine/vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -12,8 +12,8 @@ set undolevels=50
 set termguicolors
 syntax enable
 set background=dark
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
+colorscheme rosepine
+let g:airline_theme='zenburn'
 
 set backup
 set backupdir=$HOME/.vim/backup
