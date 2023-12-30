@@ -1,6 +1,20 @@
+"Plugins"
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+call plug#end()
+
+"Base configuration"
 set history=100
 set undolevels=50
+
+set termguicolors
 syntax enable
+set background=dark
+colorscheme gruvbox
+let g:airline_theme='gruvbox'
+
 set backup
 set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/temp
@@ -14,8 +28,8 @@ set smarttab
 set smartindent
 set nowrap
 
+"Terminal configuration"
 set scrolloff=8
 set signcolumn=yes
 set colorcolumn=120
 highlight ColorColumn ctermbg=0*
-
