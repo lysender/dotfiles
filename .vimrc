@@ -2,6 +2,7 @@ set history=100
 set undolevels=50
 
 syntax enable
+colorscheme slate
 
 set backup
 set backupdir=$HOME/.vim/backup
