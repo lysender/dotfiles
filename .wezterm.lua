@@ -7,7 +7,10 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "Builtin Dark"
+-- "Builtin Dark"
+-- "cga"
+-- "Dark Pastel"
+config.color_scheme = "Homebrew"
 
 config.font = wezterm.font("MonoLisa", { weight = "Regular", stretch = "Normal", style = "Normal" })
 
