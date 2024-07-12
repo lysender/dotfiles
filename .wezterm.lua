@@ -1,6 +1,7 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 local mux = wezterm.mux
+local act = wezterm.action
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -15,44 +16,140 @@ config.color_scheme = "Homebrew"
 
 config.font = wezterm.font("MonoLisa", { weight = "Regular", stretch = "Normal", style = "Normal" })
 
+wezterm.on("update-right-status", function(window)
+	window:set_right_status(window:active_workspace())
+end)
+
+config.keys = {
+	-- Switch to default workspace
+	{
+		key = "y",
+		mods = "CTRL|SHIFT",
+		action = act.SwitchToWorkspace({
+			name = "work",
+		}),
+	},
+	{
+		key = "u",
+		mods = "CTRL|SHIFT",
+		action = act.SwitchToWorkspace({
+			name = "personal",
+		}),
+	},
+	{
+		key = "i",
+		mods = "CTRL|SHIFT",
+		action = act.SwitchToWorkspace({
+			name = "misc",
+		}),
+	},
+}
+
 wezterm.on("gui-startup", function()
-	-- Opens a window with its first tab
-	local _, _, window = mux.spawn_window({
+	-- Start with the work workspace
+	local _, _, work_window = mux.spawn_window({
 		cwd = "D:\\Files\\workspaces",
+		workspace = "work",
 		args = {
 			"cmd.exe",
 			"/k",
-			"cd \\Files\\workspaces\\project-1 && wezterm cli set-tab-title project-1",
+			"cd \\Files\\workspaces\\work\\repo1 && wezterm cli set-tab-title repo1",
 		},
 	})
 
-	-- The rest of the tabs
-	-- For some reason, passing cwd to the spawn_tab function doesn't work
-	-- so we have to use the cd command in the args
-	local cmds = {
+	-- Work tabs
+	local work_cmds = {
 		{
 			args = {
 				"cmd.exe",
 				"/k",
-				"cd \\Files\\workspaces\\project-2 && wezterm cli set-tab-title project-2",
+				"cd \\Files\\workspaces\\work\\repo2 && wezterm cli set-tab-title repo2",
 			},
 		},
 		{
 			args = {
 				"cmd.exe",
 				"/k",
-				"cd \\Files\\workspaces\\project-3 && wezterm cli set-tab-title project-3",
+				"cd \\Files\\workspaces\\work\\repo3 && wezterm cli set-tab-title repo3",
 			},
 		},
 	}
 
-	for _, cmd in ipairs(cmds) do
-		window:spawn_tab({
+	for _, cmd in ipairs(work_cmds) do
+		work_window:spawn_tab({
 			args = cmd.args,
 		})
 	end
 
-	window:gui_window():maximize()
+	work_window:gui_window():maximize()
+
+	-- Personal workspace
+	local _, _, personal_window = mux.spawn_window({
+		cwd = "D:\\Files\\workspaces",
+		workspace = "personal",
+		args = {
+			"cmd.exe",
+			"/k",
+			"cd \\Files\\workspaces\\lysender\\repo1 && wezterm cli set-tab-title repo1",
+		},
+	})
+
+	local personal_cmds = {
+		{
+			args = {
+				"cmd.exe",
+				"/k",
+				"cd \\Files\\workspaces\\lysender\\repo2 && wezterm cli set-tab-title repo2",
+			},
+		},
+		{
+			args = {
+				"cmd.exe",
+				"/k",
+				"cd \\Files\\workspaces\\lysender\\repo3 && wezterm cli set-tab-title repo3",
+			},
+		},
+	}
+
+	for _, cmd in ipairs(personal_cmds) do
+		personal_window:spawn_tab({
+			args = cmd.args,
+		})
+	end
+
+	-- Misc tabs
+	local _, _, misc_window = mux.spawn_window({
+		cwd = "D:\\Files\\workspaces",
+		workspace = "misc",
+		args = {
+			"cmd.exe",
+			"/k",
+			"wezterm cli set-tab-title misc",
+		},
+	})
+
+	local misc_cmds = {
+		{
+			args = {
+				"cmd.exe",
+				"/k",
+				"cd /d C: && cd \\Users\\joe\\AppData\\Local\\nvim && wezterm cli set-tab-title nvim",
+			},
+		},
+		{
+			args = {
+				"cmd.exe",
+				"/k",
+				"cd \\Files\\workspaces\\config\\dotfiles && wezterm cli set-tab-title dotfiles",
+			},
+		},
+	}
+
+	for _, cmd in ipairs(misc_cmds) do
+		misc_window:spawn_tab({
+			args = cmd.args,
+		})
+	end
 end)
 
 -- and finally, return the configuration to wezterm
