@@ -109,7 +109,7 @@ export PATH=$BUN_INSTALL/bin:$PATH
 PATH="$PATH:$HOME/.local/bin"
 
 # Add nvs node 20 bin path to use it as default node/npm path
-PATH="$PATH:$HOME/.nvs/node/20.11.0/x64/bin"
+PATH="$PATH:$HOME/.nvs/node/22.8.0/x64/bin"
 
 # Add go bin path
 PATH="$PATH:/usr/local/go/bin"
