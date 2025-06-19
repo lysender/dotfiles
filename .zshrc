@@ -117,7 +117,10 @@ PATH="$PATH:/usr/local/go/bin"
 # Add local go bin path as well
 PATH="$PATH:$HOME/go/bin"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Activate default python venv
+source ~/pydev/bin/activate
 
 # Common git aliases
 alias gff='git diff'
