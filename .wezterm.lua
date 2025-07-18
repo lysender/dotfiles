@@ -20,7 +20,7 @@ wezterm.on("update-right-status", function(window)
 	window:set_right_status(window:active_workspace())
 end)
 
-config.default_prog = { "powershell.exe" }
+config.default_prog = { "pwsh.exe" }
 
 config.keys = {
 	-- Switch to default workspace
@@ -53,7 +53,7 @@ wezterm.on("gui-startup", function()
 		cwd = "D:\\Files\\workspaces",
 		workspace = "work",
 		args = {
-			"powershell.exe",
+			"pwsh.exe",
 			"-NoExit",
 			"-Command",
 			"cd \\Files\\workspaces\\work\\repo1; wezterm cli set-tab-title repo1",
@@ -64,7 +64,7 @@ wezterm.on("gui-startup", function()
 	local work_cmds = {
 		{
 			args = {
-				"powershell.exe",
+				"pwsh.exe",
 				"-NoExit",
 				"-Command",
 				"cd \\Files\\workspaces\\work\\repo2; wezterm cli set-tab-title repo2",
@@ -72,7 +72,7 @@ wezterm.on("gui-startup", function()
 		},
 		{
 			args = {
-				"powershell.exe",
+				"pwsh.exe",
 				"-NoExit",
 				"-Command",
 				"cd \\Files\\workspaces\\work\\repo3; wezterm cli set-tab-title repo3",
@@ -93,7 +93,7 @@ wezterm.on("gui-startup", function()
 		cwd = "D:\\Files\\workspaces",
 		workspace = "personal",
 		args = {
-			"powershell.exe",
+			"pwsh.exe",
 			"-NoExit",
 			"-Command",
 			"cd \\Files\\workspaces\\lysender\\repo1; wezterm cli set-tab-title repo1",
@@ -103,7 +103,7 @@ wezterm.on("gui-startup", function()
 	local personal_cmds = {
 		{
 			args = {
-				"powershell.exe",
+				"pwsh.exe",
 				"-NoExit",
 				"-Command",
 				"cd \\Files\\workspaces\\lysender\\repo2; wezterm cli set-tab-title repo2",
@@ -111,7 +111,7 @@ wezterm.on("gui-startup", function()
 		},
 		{
 			args = {
-				"powershell.exe",
+				"pwsh.exe",
 				"-NoExit",
 				"-Command",
 				"cd \\Files\\workspaces\\lysender\\repo3; wezterm cli set-tab-title repo3",
@@ -130,7 +130,7 @@ wezterm.on("gui-startup", function()
 		cwd = "C:\\Users\\joe",
 		workspace = "misc",
 		args = {
-			"powershell.exe",
+			"pwsh.exe",
 			"-NoExit",
 			"-Command",
 			"wezterm cli set-tab-title misc",
@@ -140,7 +140,7 @@ wezterm.on("gui-startup", function()
 	local misc_cmds = {
 		{
 			args = {
-				"powershell.exe",
+				"pwsh.exe",
 				"-NoExit",
 				"-Command",
 				"cd \\Users\\joe\\AppData\\Local\\nvim; wezterm cli set-tab-title nvim",
@@ -148,7 +148,7 @@ wezterm.on("gui-startup", function()
 		},
 		{
 			args = {
-				"powershell.exe",
+				"pwsh.exe",
 				"-NoExit",
 				"-Command",
 				"Set-Location -Path D:; cd \\Files\\workspaces\\config\\dotfiles; wezterm cli set-tab-title dotfiles",
