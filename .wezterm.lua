@@ -20,6 +20,8 @@ wezterm.on("update-right-status", function(window)
 	window:set_right_status(window:active_workspace())
 end)
 
+config.default_prog = { "powershell.exe" }
+
 config.keys = {
 	-- Switch to default workspace
 	{
@@ -51,9 +53,10 @@ wezterm.on("gui-startup", function()
 		cwd = "D:\\Files\\workspaces",
 		workspace = "work",
 		args = {
-			"cmd.exe",
-			"/k",
-			"cd \\Files\\workspaces\\work\\repo1 && wezterm cli set-tab-title repo1",
+			"powershell.exe",
+			"-NoExit",
+			"-Command",
+			"cd \\Files\\workspaces\\work\\repo1; wezterm cli set-tab-title repo1",
 		},
 	})
 
@@ -61,16 +64,18 @@ wezterm.on("gui-startup", function()
 	local work_cmds = {
 		{
 			args = {
-				"cmd.exe",
-				"/k",
-				"cd \\Files\\workspaces\\work\\repo2 && wezterm cli set-tab-title repo2",
+				"powershell.exe",
+				"-NoExit",
+				"-Command",
+				"cd \\Files\\workspaces\\work\\repo2; wezterm cli set-tab-title repo2",
 			},
 		},
 		{
 			args = {
-				"cmd.exe",
-				"/k",
-				"cd \\Files\\workspaces\\work\\repo3 && wezterm cli set-tab-title repo3",
+				"powershell.exe",
+				"-NoExit",
+				"-Command",
+				"cd \\Files\\workspaces\\work\\repo3; wezterm cli set-tab-title repo3",
 			},
 		},
 	}
@@ -88,25 +93,28 @@ wezterm.on("gui-startup", function()
 		cwd = "D:\\Files\\workspaces",
 		workspace = "personal",
 		args = {
-			"cmd.exe",
-			"/k",
-			"cd \\Files\\workspaces\\lysender\\repo1 && wezterm cli set-tab-title repo1",
+			"powershell.exe",
+			"-NoExit",
+			"-Command",
+			"cd \\Files\\workspaces\\lysender\\repo1; wezterm cli set-tab-title repo1",
 		},
 	})
 
 	local personal_cmds = {
 		{
 			args = {
-				"cmd.exe",
-				"/k",
-				"cd \\Files\\workspaces\\lysender\\repo2 && wezterm cli set-tab-title repo2",
+				"powershell.exe",
+				"-NoExit",
+				"-Command",
+				"cd \\Files\\workspaces\\lysender\\repo2; wezterm cli set-tab-title repo2",
 			},
 		},
 		{
 			args = {
-				"cmd.exe",
-				"/k",
-				"cd \\Files\\workspaces\\lysender\\repo3 && wezterm cli set-tab-title repo3",
+				"powershell.exe",
+				"-NoExit",
+				"-Command",
+				"cd \\Files\\workspaces\\lysender\\repo3; wezterm cli set-tab-title repo3",
 			},
 		},
 	}
@@ -119,11 +127,12 @@ wezterm.on("gui-startup", function()
 
 	-- Misc tabs
 	local _, _, misc_window = mux.spawn_window({
-		cwd = "D:\\Files\\workspaces",
+		cwd = "C:\\Users\\joe",
 		workspace = "misc",
 		args = {
-			"cmd.exe",
-			"/k",
+			"powershell.exe",
+			"-NoExit",
+			"-Command",
 			"wezterm cli set-tab-title misc",
 		},
 	})
@@ -131,16 +140,18 @@ wezterm.on("gui-startup", function()
 	local misc_cmds = {
 		{
 			args = {
-				"cmd.exe",
-				"/k",
-				"cd /d C: && cd \\Users\\joe\\AppData\\Local\\nvim && wezterm cli set-tab-title nvim",
+				"powershell.exe",
+				"-NoExit",
+				"-Command",
+				"cd \\Users\\joe\\AppData\\Local\\nvim; wezterm cli set-tab-title nvim",
 			},
 		},
 		{
 			args = {
-				"cmd.exe",
-				"/k",
-				"cd \\Files\\workspaces\\config\\dotfiles && wezterm cli set-tab-title dotfiles",
+				"powershell.exe",
+				"-NoExit",
+				"-Command",
+				"Set-Location -Path D:; cd \\Files\\workspaces\\config\\dotfiles; wezterm cli set-tab-title dotfiles",
 			},
 		},
 	}
