@@ -9,7 +9,7 @@ end_of_line = lf
 insert_final_newline = true
 
 # Set default charset
-[*.{rs,go,js,ts,json,yaml,toml,yml,xml,html,css,scss,md}]
+[*.{rs,go,php,js,ts,json,yaml,toml,yml,xml,html,css,scss,md}]
 charset = utf-8
 
 # Indentation override for all JS/TS under src directory
