@@ -234,6 +234,10 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
+--- Custom keymaps
+--- Remap early before any plugins are even loaded
+require("custom.remap")
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
