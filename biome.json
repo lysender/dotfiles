@@ -1,7 +1,12 @@
 {
-    "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+    "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+    "vcs": {
+        "enabled": true,
+        "clientKind": "git",
+        "useIgnoreFile": true
+    },
     "files": {
-        "includes": ["**/app/**", "**/lib/**", "**/pages/**"]
+        "includes": ["middleware.ts", "**/app/**", "**/lib/**", "**/pages/**"]
     },
     "formatter": {
         "enabled": true,
@@ -12,7 +17,27 @@
         "lineWidth": 120,
         "attributePosition": "auto"
     },
-    "assist": { "actions": { "source": { "organizeImports": "on" } } },
+    "css": {
+        "formatter": {
+            "enabled": true
+        },
+        "parser": {
+            "tailwindDirectives": true
+        }
+    },
+    "html": {
+        "formatter": {
+            "enabled": true
+        }
+    },
+    "assist": {
+        "enabled": true,
+        "actions": {
+            "source": {
+                "organizeImports": "off"
+            }
+        }
+    },
     "linter": {
         "enabled": true,
         "rules": {
@@ -35,7 +60,8 @@
                 "useLiteralKeys": "off",
                 "useArrowFunction": "off",
                 "noUselessFragments": "off",
-                "noExtraBooleanCast": "off"
+                "noExtraBooleanCast": "off",
+                "noImportantStyles": "off"
             },
             "correctness": {
                 "useExhaustiveDependencies": "off",
@@ -55,11 +81,15 @@
                 "noNonNullAssertion": "off",
                 "useSelfClosingElements": "off"
             },
+            "security": {
+                "noDangerouslySetInnerHtml": "warn"
+            },
             "suspicious": {
                 "noExplicitAny": "off",
                 "noArrayIndexKey": "off",
                 "noImplicitAnyLet": "off",
-                "noVar": "off"
+                "noVar": "off",
+                "noUnknownAtRules": "off"
             }
         }
     },
