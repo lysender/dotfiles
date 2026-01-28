@@ -14,6 +14,7 @@ print-width = 120
 use-tabs = false
 tab-width = 4
 align-assignment-like = true
+sort-uses = false
 
 [linter]
 integrations = ["phpunit"]
