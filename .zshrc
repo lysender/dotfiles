@@ -124,6 +124,9 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:${PATH}"
 # Set mysql-client path
 PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
+# Add PHP 8.2 to path
+PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
+
 export LIBRARY_PATH="/opt/homebrew/opt/libpq/lib:$LIBRARY_PATH"
 export CPATH="/opt/homebrew/opt/libpq/include:$CPATH"
 
