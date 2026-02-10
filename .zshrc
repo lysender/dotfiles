@@ -109,7 +109,7 @@ export PATH=$BUN_INSTALL/bin:$PATH
 PATH="$PATH:$HOME/.local/bin"
 
 # Add nvs node 20 bin path to use it as default node/npm path
-PATH="$PATH:$HOME/.nvs/node/24.2.0/x64/bin"
+PATH="$PATH:$HOME/.nvs/node/24.2.0/arm64/bin"
 
 # Add go bin path
 PATH="$PATH:/usr/local/go/bin"
@@ -117,10 +117,20 @@ PATH="$PATH:/usr/local/go/bin"
 # Add local go bin path as well
 PATH="$PATH:$HOME/go/bin"
 
+# Setting PATH for Python 3.13
+# The original version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:${PATH}"
+
+# Set mysql-client path
+PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+export LIBRARY_PATH="/opt/homebrew/opt/libpq/lib:$LIBRARY_PATH"
+export CPATH="/opt/homebrew/opt/libpq/include:$CPATH"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Activate default python venv
-source ~/pydev/bin/activate
+#source ~/pydev/bin/activate
 
 # Common git aliases
 alias gff='git diff'
