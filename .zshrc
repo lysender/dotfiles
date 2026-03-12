@@ -133,7 +133,7 @@ export CPATH="/opt/homebrew/opt/libpq/include:$CPATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Activate default python venv
-#source ~/pydev/bin/activate
+source ~/pydev/bin/activate
 
 # Common git aliases
 alias gff='git diff'
