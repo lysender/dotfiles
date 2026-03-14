@@ -135,6 +135,9 @@ export CPATH="/opt/homebrew/opt/libpq/include:$CPATH"
 # Activate default python venv
 source ~/pydev/bin/activate
 
+# Add Turso CLI to path
+. "$HOME/.turso/env"
+
 # Common git aliases
 alias gff='git diff'
 alias gpl='git pull'
