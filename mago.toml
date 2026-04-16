@@ -9,12 +9,15 @@ includes = ["vendor"]
 excludes = []
 
 [formatter]
-preset = "default"
+preset = "psr-12"
 print-width = 120
 use-tabs = false
 tab-width = 4
 align-assignment-like = true
+separate-use-types = true
+expand-use-groups = true
 sort-uses = false
+space-within-grouping-parenthesis = false
 
 [linter]
 integrations = ["phpunit"]
