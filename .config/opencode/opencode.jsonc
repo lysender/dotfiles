@@ -1,0 +1,23 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "mcp": {
+        "turso": {
+            "type": "local",
+            "command": ["tursodb", "--mcp"],
+            "enabled": true
+        },
+        "aws-mcp": {
+            "type": "local",
+            "command": [
+                "uvx",
+                "mcp-proxy-for-aws@latest",
+                "https://aws-mcp.us-east-1.api.aws/mcp",
+                "--metadata",
+                "AWS_REGION=ap-southeast-1"
+            ],
+            "enabled": true,
+            "timeout": 100000,
+            "transport": "stdio"
+        }
+    }
+}
