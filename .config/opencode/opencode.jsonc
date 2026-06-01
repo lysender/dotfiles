@@ -18,6 +18,10 @@
             "enabled": true,
             "timeout": 100000,
             "transport": "stdio"
+        },
+        "next-devtools": {
+            "type": "local",
+            "command": ["npx", "-y", "next-devtools-mcp@latest"]
         }
     }
 }
