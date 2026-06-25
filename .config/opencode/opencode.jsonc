@@ -22,6 +22,10 @@
         "next-devtools": {
             "type": "local",
             "command": ["npx", "-y", "next-devtools-mcp@latest"]
+        },
+        "terraform": {
+            "type": "local",
+            "command": ["terraform-mcp-server"]
         }
     }
 }
